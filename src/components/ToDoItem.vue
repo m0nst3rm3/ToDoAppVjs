@@ -61,12 +61,13 @@ export default {
       this.isEditing = false;
       this.focusOnEditButton();
     },
-    focusOnEditButton(){
-      const editButtonRef = this.$refs.editButton
-      editButtonRef.focus();
+    focusOnEditButton() {
+      this.$nextTick(() => {
+        const editButtonRef = this.$refs.editButton;
+        editButtonRef.focus();
+      });
     }
   },
-
 };
 </script>
 <style scoped>
